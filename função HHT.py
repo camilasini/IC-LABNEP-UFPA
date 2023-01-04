@@ -83,21 +83,28 @@ def hilbert_huang(data, sample_rate):
         
      return fcarrier, fam, spec, sholo 
 
-#erro
-#laço for para computar os 28 arquivos da pasta 
+#laço for pra computar os arquivos
 import os
 
-path = r"C:\Users\Camila\OneDrive - Universidade Federal do Pará - UFPA\Documentos\LABNEP\EEG TESTE\DATASET\cleaned"
+directory = r"C:\Users\Camila\OneDrive - Universidade Federal do Pará - UFPA\Documentos\LABNEP\EEG TESTE\DATASET\cleaned"
+files = os.listdir(directory)
 
-files = os.listdir(path)
+data=[]
+fcarrier=[]
+fam=[]
+spec=[]
+sholo=[]
 
-for each_file in files:
-    full_path = "%s/%s" % (path, each_file)
-    matdat1 = loadmat(full_path)
-    data = matdat1['data'].flatten()
-    
-    fcarrier, fam, spec, sholo = hilbert_huang(data, sample_rate)
-    holo = holospectrum(fam, fcarrier, sholo)
+
+for filename in files:
+    f = os.path.join(directory, filename) 
+    if os.path.isfile(f):
+        matdat1 = loadmat(f)
+        data.append(matdat1['data'].flatten())
+        
+        #erro
+    #for i in range(len(files)):
+        #fcarrier, fam, spec, sholo = hilbert_huang(data[i], sample_rate=200)
     
 
 
