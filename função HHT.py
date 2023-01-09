@@ -113,6 +113,48 @@ was = np.array(data_mean)
 fcarrier, fam, spec, sholo = hilbert_huang(was, sample_rate)
 
 #PROBLEMA 
+#OUTPUT:
+
+ValueError                                Traceback (most recent call last)
+<ipython-input-148-86c5b6edbe17> in <module>
+----> 1 fcarrier, fam, holo = emd.spectra.holospectrum(IF, IF2, IA2, carrier_hist, am_hist)
+
+5 frames
+/usr/local/lib/python3.8/dist-packages/emd/spectra.py in holospectrum(IF, IF2, IA2, edges, edges2, sum_time, sum_first_imfs, sum_second_imfs, mode, sample_rate, scaling, return_sparse, return_Gb_limit)
+    758 
+    759     # Begin computation
+--> 760     holo = _higher_order_spectra(IF, IF2, IA2, edges, edges2)
+    761 
+    762     sum_dims = np.where([0, 0, sum_time, sum_first_imfs, sum_second_imfs])[0]
+
+/usr/local/lib/python3.8/dist-packages/emd/spectra.py in _higher_order_spectra(X, Y, Z, x_edges, y_edges)
+   1101 
+   1102     # Create sparse spectrum
+-> 1103     s = sparse.COO(coords, Z, shape=final_shape)
+   1104 
+   1105     return s
+
+/usr/local/lib/python3.8/dist-packages/sparse/_coo/core.py in __init__(self, coords, data, shape, has_duplicates, sorted, prune, cache, fill_value, idx_dtype)
+    294 
+    295         if not sorted:
+--> 296             self._sort_indices()
+    297 
+    298         if has_duplicates:
+
+/usr/local/lib/python3.8/dist-packages/sparse/_coo/core.py in _sort_indices(self)
+   1242         array([3, 4, 1], dtype=uint8)
+   1243         """
+-> 1244         linear = self.linear_loc()
+   1245 
+   1246         if (np.diff(linear) >= 0).all():  # already sorted
+
+/usr/local/lib/python3.8/dist-packages/sparse/_coo/core.py in linear_loc(self)
+    938         from .common import linear_loc
+    939 
+--> 940         return linear_loc(self.coords, self.shape)
+    941 
+    942     def flatten(self, order="C"):
+
 /usr/local/lib/python3.8/dist-packages/sparse/_coo/common.py in linear_loc(coords, shape)
      63         return np.zeros(coords.shape[1:], dtype=np.intp)
      64     else:
