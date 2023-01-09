@@ -90,10 +90,6 @@ directory = r"C:\Users\Camila\OneDrive - Universidade Federal do Pará - UFPA\Do
 files = os.listdir(directory)
 
 data=[]
-fcarrier=[]
-fam=[]
-spec=[]
-sholo=[]
 
 
 for filename in files:
@@ -102,13 +98,30 @@ for filename in files:
         matdat1 = loadmat(f)
         data.append(matdat1['data'].flatten())
         
-        #erro
-    #for i in range(len(files)):
-        #fcarrier, fam, spec, sholo = hilbert_huang(data[i], sample_rate=200)
-    
+#______________________________________________________________________________________________
+# média dos arrays
+data_mean = []
 
+for i in range(len(data)):
+   data_mean.append(np.mean(data[i]))
+  
+was = np.array(data_mean)
 
+#____________________________________________________________________________________________
+# hora de fazer a HHT3D
 
+fcarrier, fam, spec, sholo = hilbert_huang(was, sample_rate)
 
+#PROBLEMA 
+/usr/local/lib/python3.8/dist-packages/sparse/_coo/common.py in linear_loc(coords, shape)
+     63         return np.zeros(coords.shape[1:], dtype=np.intp)
+     64     else:
+---> 65         return np.ravel_multi_index(coords, shape)
+     66 
+     67 
+
+<__array_function__ internals> in ravel_multi_index(*args, **kwargs)
+
+ValueError: invalid entry in coordinates array
 
 
