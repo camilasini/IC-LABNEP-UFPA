@@ -165,5 +165,3 @@ ValueError                                Traceback (most recent call last)
 <__array_function__ internals> in ravel_multi_index(*args, **kwargs)
 
 ValueError: invalid entry in coordinates array
-
-
