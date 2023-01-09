@@ -1,0 +1,37 @@
+#procurando o array com maior shape para usar de referência no zero padding
+
+values = []
+
+for i in range(len(data)):
+  value=np.shape(data[i])
+  values.append(value)
+
+max_value = max(values)
+max_value = np.array(max_value)
+
+#criando listas para usar no laço for
+
+new_data = [] 
+data_padded = []
+width_list = []
+
+#laço for para computar o zero padding 
+
+for i in range(len(data)):
+  if max(np.shape(data)) < max_value:
+    width = (max_value - max(np.shape(data[i])))/2   #np.pad adiciona zeros nas duas bordas, então a diferença entre os shapes precisa ser dividida por 2
+    width_list.append(int(width))
+  data_padd = np.pad(data[i], width_list[i])
+  new_data.append(data_padd)
+  
+  #procurando os arrays que ficaram com o shape diferente pos zero padding (no meu caso o valor de (2333539,) enquanto os outros arrays eram (2333540,))
+  
+  for a in range(len(new_data)):
+  if float('.'.join(str(ele) for ele in np.shape(new_data[a]))) == 2333539:
+    print(a)
+    new_data[a] = np.append(new_data[a],0)
+    
+  #confirmando que os shapes estão iguais  
+  for i in range(len(new_data)):
+   value=np.shape(new_data[i])
+   print(value)
