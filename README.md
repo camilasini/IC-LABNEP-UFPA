@@ -16,15 +16,16 @@ ________________________________________________________________________________
 - Já fiz:
 1. As funções de hilbert huang 3D e holospectrum
 2. laço for para carregar na lista 'data' os valores dos arquivos 
-3. média da lista de arrays
+3. Comparação entre fazer a média antes ou depois do holospectrum
+
 ______________________________________________________________________________________________________________________
 
 - Problemas encontrados:
-1. esta dando problema no valor de holo na hora de computar a HHT 3D
-2. Acho que os valores do array são muito baixos?
+1. encaixar a função HHT3D no laço for (acredita que esta dando problema por que esta retorna 4 saídas
 
 ______________________________________________________________________________________________________________________
 
 - Falta ser feito: 
 1. Descobrir quem são o grupo de controle e quem são o grupo autista para fazer a média dos grupos
-2. Fazer a média e então a HHT e o holospectrum, ou fazer o HHT de cada sujeito do grupo e então a média e o holospectrum?
+2. Fazer a média e então a HHT e o holospectrum, ou fazer o HHT de cada sujeito do grupo e então a média e o holospectrum? 
+          - definitivamente HHT de cada sujeito e então a média dos holos
