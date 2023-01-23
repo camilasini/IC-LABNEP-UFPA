@@ -17,11 +17,12 @@ ________________________________________________________________________________
 1. As funções de hilbert huang 3D e holospectrum
 2. laço for para carregar na lista 'data' os valores dos arquivos 
 3. Comparação entre fazer a média antes ou depois do holospectrum
+4. Função de plot do holospectrum
 
 ______________________________________________________________________________________________________________________
 
 - Problemas encontrados:
-1. encaixar a função HHT3D no laço for (acredita que esta dando problema por que esta retorna 4 saídas
+
 
 ______________________________________________________________________________________________________________________
 
