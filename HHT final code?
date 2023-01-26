@@ -24,8 +24,9 @@ def mask_sift_second_layer(IA, masks, config={}):
         tmp = emd.sift.mask_sift(IA[:, ii], **config)
         imf2[:, ii, :tmp.shape[1]] = tmp
     return imf2
+_____________________________________________________________________________________    
+    ####função p calcular o hilbert huang####
     
-    #função p calcular o hilbert huang 
 def hilbert_huang(data, sample_rate=200):
      imf = my_mask_sift(data)
 
@@ -68,7 +69,9 @@ def hilbert_huang(data, sample_rate=200):
     
      return fcarrier, fam, spec, sholo, hht_by_phase
      
-     
+______________________________________________________________________________________________________     
+#### importando dados ####
+
 import matplotlib.pyplot as plt
 from scipy.io import loadmat
 import numpy as np
@@ -100,7 +103,8 @@ for i in range(0,16):
  13.Fz
  14.Pz
  15.Oz
-##analisar os canais frontais
+ __________________________________________________________________________
+###analisar os canais frontais
 
 data = matdat1['data'][8]  ##um canal por vez
 fcarrier, fam, spec, sholo, hht_by_phase = hilbert_huang(data, sample_rate)
