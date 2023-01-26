@@ -19,16 +19,22 @@ my_mask_sift = partial(emd.sift.mask_sift, **config)
 #função para plotar o holospectrum
 
 def holospectrum(fam, fcarrier, sholo):
-    plt.axes([.75, .1, .500, .9])
-    plt.yscale('log')
-    plt.xscale('log')
-    plt.title('Holospectrum')
-    plt.xlabel('AM Frequency (Hz)')
-    plt.ylabel('Frequency (Hz)')
-    plt.yticks(10**np.arange(3), 10**np.arange(3))
-    plt.pcolormesh(fam, fcarrier, sholo, cmap='ocean_r', shading='nearest')
+   fig,ax=plt.subplots(1,1, figsize=(12,6))
+   cp = ax.contourf(fcarrier, fam, sholo.T**0.25, cmap = 'jet', shade = 'nearest', levels=np.linspace(np.min(sholo.T)**0.25, np.max(sholo.T)**0.25, 40))
+   plt.yscale('log')
+   plt.xscale('log')
+   plt.ylim(0.5,16)
+   plt.xlim(1,32)
+   plt.yticks(2**np.arange(5),2**np.arange(5))
+   plt.xticks(2**np.arange(6),2**np.arange(6))
+   plt.colorbar(cp)
+   #cb.set_label(r'$V^{2}$', rotation=0)
+   ax.set_title('holospectrum')
+   ax.set_xlabel('FM Frequency (Hz)')
+   ax.set_ylabel('AM Frequency (Hz)')
+   plt.show()
     
-    return 
+   return 
 
 #_________________________________________________________________________
 #função para a imf2
