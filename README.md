@@ -1,7 +1,7 @@
 # IC-UFPA
 pra registrar os testes da IC
 
-- Atualmente trabalhando em análise do holospectrum do grupo de autistas e grupo de controle
+- Atualmente trabalhando em análise do holospectrum (Hilbert Huang Spectral Analysis) do grupo de autistas e grupo de controle
 
 O código consiste em:
 1. Extrair IMFs
@@ -22,11 +22,9 @@ ________________________________________________________________________________
 ______________________________________________________________________________________________________________________
 
 - Problemas encontrados:
-
+1. harmônicas nos múltiplos de 2.5 no plot do holospectrum, provavelmente tem algo a ver com o processo inicial (EMD), atualmente pesquisando sobre o masking usado nesse método
 
 ______________________________________________________________________________________________________________________
 
 - Falta ser feito: 
 1. Descobrir quem são o grupo de controle e quem são o grupo autista para fazer a média dos grupos
-2. Fazer a média e então a HHT e o holospectrum, ou fazer o HHT de cada sujeito do grupo e então a média e o holospectrum? 
-          - definitivamente HHT de cada sujeito e então a média dos holos
