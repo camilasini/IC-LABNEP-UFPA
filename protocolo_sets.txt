@@ -1,0 +1,24 @@
+EM PYTHON
+
+1. passar o arquivo EDF pelo código para convertar em .SET (usando mne pyhon)
+2. excluir os canais extras que não foram usados (edf.drop_channels)
+3. exportar como .SET
+
+________________
+
+no EEGLAB
+
+1. Load existing dataset
+2. Edit > dataset info > channel location file > browser > 'channel_location.ced'
+3. Tools > re-reference the data > to channels A1 e A2
+4. Tools > Filter the data > Basic FIR filter > notch 53-63Hz 
+
+OBS: o próprio neuromap já passa um filtro de 0.5 - 70Hz no arquivo original
+
+5. Tools > Reject data using cleanrawdata and ASR
+6. Tools > Decompose data by ICA
+7. Tools > Classify components using ICLABEL > Label Components
+8. Tools > Reject data using ICA > reject components by map
+      8.1. rejeitar qualquer componente menor e diferente de BRAIN 75%
+9. Tools > remove components from data 
+10. Save 
