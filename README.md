@@ -1,5 +1,7 @@
 # IC-UFPA
-pra registrar os testes da IC
+Registro dos códigos da IC no Laboratório de Neuroprocessamento
+Título do trabalho: Marcador de habilidade visuoespacial baseado em registros de EEG em crianças e adolescentes com transtorno do espectro autista
+Início: Agosto/2022 - Final: Agosto/2023
 
 - Atualmente trabalhando em análise do holospectrum (Hilbert Huang Spectral Analysis) do grupo de autistas e grupo de controle
 
@@ -18,13 +20,8 @@ ________________________________________________________________________________
 2. laço for para carregar na lista 'data' os valores dos arquivos 
 3. Comparação entre fazer a média antes ou depois do holospectrum
 4. Função de plot do holospectrum
-
-______________________________________________________________________________________________________________________
-
-- Problemas encontrados:
-1. harmônicas nos múltiplos de 2.5 no plot do holospectrum, provavelmente tem algo a ver com o processo inicial (EMD), atualmente pesquisando sobre o masking usado nesse método
-
+5. Plot das médias dos canais dos grupos experimental e controle
 ______________________________________________________________________________________________________________________
 
 - Falta ser feito: 
-1. Descobrir quem são o grupo de controle e quem são o grupo autista para fazer a média dos grupos
+1. Média dos canais, agrupar de acordo com a área do cérebro (frontal, parietal, etc) dos grupos experimental e controle
