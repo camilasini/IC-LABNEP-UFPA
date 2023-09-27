@@ -1,9 +1,15 @@
 # IC-UFPA
 Registro dos códigos da IC no Laboratório de Neuroprocessamento
-Título do trabalho: Marcador de habilidade visuoespacial baseado em registros de EEG em crianças e adolescentes com transtorno do espectro autista
-Início: Agosto/2022 - Final: Agosto/2023
+- Título do trabalho: Marcador de habilidade visuoespacial baseado em registros de EEG em crianças e adolescentes com transtorno do espectro autista
+    - Início: Agosto/2022 - Final: Agosto/2023
 
-- Atualmente trabalhando em análise do holospectrum (Hilbert Huang Spectral Analysis) do grupo de autistas e grupo de controle
+__________________________________________________________________________________________________________
+- estatística descritiva:
+    - 8 grupo experimental
+    - 11 grupo controle
+    
+___________________________________________________________________________________________________________________
+- Análise do holospectrum (Hilbert Huang Spectral Analysis) do grupo de autistas e grupo de controle
 
 O código consiste em:
 1. Extrair IMFs
